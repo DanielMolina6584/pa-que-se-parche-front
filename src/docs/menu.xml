@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+    <title>Gestionar</title>
+    <items>
+        <item>
+            <name>Usuarios</name>
+            <path>/gestionar/usuarios</path>
+        </item>
+        <item>
+            <name>Productos</name>
+            <path>/gestionar/productos</path>
+        </item>
+        <item>
+            <name>Pedidos</name>
+            <path>/gestionar/pedidos</path>
+        </item>
+    </items>
+</menu>

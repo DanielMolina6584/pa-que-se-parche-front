@@ -1,30 +1,3 @@
-.slick-dots {
-    position: absolute;
-    top: 700px; /* Ajusta la posición vertical (mover arriba) */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2; /* Asegura que los puntos estén encima del carrusel */
-}
-
-.slick-dots li button {
-    background-color: #fff; /* Color de los puntos */
-    border-radius: 50%; /* Forma circular */
-    width: 10px; /* Tamaño del punto */
-    height: 10px; /* Tamaño del punto */
-    margin: 0 5px;
-    opacity: 0.7; /* Opacidad para los puntos inactivos */
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.slick-dots li.slick-active button {
-    opacity: 1; /* Mayor opacidad para el punto activo */
-    transform: scale(1.0); /* Aumenta el tamaño del punto activo */
-    background-color: #3c00a3; /* Color del punto activo (negro o el color que desees) */
-}
-
 .carousel-container {
     width: 100%;
     max-width: 100%;
@@ -34,13 +7,20 @@
 .carousel-item {
     position: relative;
     width: 100%;
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    height: 100vh; /* Full height on desktop */
+}
+
+.carousel-video-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .carousel-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que el video cubra todo el espacio */
+    object-fit: cover;
 }
 
 .carousel-overlay {
@@ -61,4 +41,72 @@
 .carousel-subtext {
     font-size: 1.5rem;
     margin-top: 10px;
+}
+
+
+
+/* Slick Slider Dots Styling */
+.slick-dots {
+    position: absolute;
+    top: 750px;
+    display: flex !important;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    z-index: 2;
+}
+
+.slick-dots li {
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #3c00a3 !important;
+    width: 20px;
+    height: 20px;
+}
+
+/* Remove default arrows */
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+/* Cursor styling */
+.carousel-container {
+    cursor: grab;
+}
+
+.carousel-container:active {
+    cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+    .carousel-text {
+        font-size: 2.4rem;
+    }
+
+    .carousel-subtext {
+        font-size: 1.2rem;
+    }
+
+    .slick-dots {
+        top: 470px;
+    }
+
+    .carousel-item {
+        height: 80vh; /* Full viewport height on mobile */
+    }
 }

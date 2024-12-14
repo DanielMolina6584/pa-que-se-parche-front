@@ -25,3 +25,18 @@ const requestApi = async (route, method = 'POST', data = {}) => {
 };
 
 export default requestApi;
+
+export const isMobileOrTablet = () => {
+    const checkMobile = () => {
+        const mobileWidth = 992;
+        const hasTouchScreen = 'maxTouchPoints' in navigator && navigator.maxTouchPoints > 0;
+
+        return (
+            window.innerWidth < mobileWidth ||
+            hasTouchScreen ||
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+        );
+    };
+
+    return checkMobile();
+};
